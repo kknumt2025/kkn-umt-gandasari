@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri | KKN UMT</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Style tambahan -->
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .fullscreen-slider {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    .swiper-slide {
+      position: relative;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    /* Swiper button customization */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+    }
+
+    /* Responsive font */
+    @media (max-width: 768px) {
+      .slide-caption {
+        font-size: 1rem;
+        padding: 8px 16px;
+      }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #111;
+        color: #eee;
+      }
+
+      .slide-caption {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="swiper mySwiper fullscreen-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/foto1.jpg" alt="Kegiatan 1">
+        <div class="slide-caption">Workshop Pengelasan SMAW</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/foto2.jpg" alt="Kegiatan 2">
+        <div class="slide-caption">Pembuatan Mesin Tetas Telur</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/foto3.jpg" alt="Kegiatan 3">
+        <div class="slide-caption">Budidaya Lidah Buaya</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/foto4.jpg" alt="Kegiatan 4">
+        <div class="slide-caption">Senam Bersama Warga</div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  </script>
+
+</body>
+</html>
